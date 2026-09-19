@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wahyu_flutter/main.dart';
 
 class Wahyu extends StatelessWidget {
   const new({super.key});
@@ -24,10 +25,7 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(backgroundColor: Colors.cyan, title: Text(widget.title)),
       body: Center(
         child: Column(
           mainAxisAlignment: .center,
@@ -36,9 +34,12 @@ class _BerandaState extends State<Beranda> {
               width: 200,
               height: 200,
               padding: EdgeInsets.only(bottom: 20),
-              child: Image.asset('images/FOTO KTM.png'),
+              child: Image.asset('images/FOTO PBAK.jpg'),
             ),
-            Text(style: TextStyle(fontSize: 20), 'TRI WAHYU NUGROHO'),
+            Text(
+              style: TextStyle(fontSize: 30, color: Colors.indigo),
+              'TRI WAHYU NUGROHO',
+            ),
             Text(style: TextStyle(fontSize: 20), '701240078'),
             Text(style: TextStyle(fontSize: 20), 'SISTEM INFORMASI'),
             Text(
@@ -46,6 +47,16 @@ class _BerandaState extends State<Beranda> {
               'UIN SULTAN THAHA SAIFUDDIN JAMBI',
             ),
             Text(style: TextStyle(fontSize: 20), 'PEMROGRAMAN MOBILE'),
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: ((context) => MyApp())),
+                );
+              },
+              child: Text('Main Flutter'),
+            ),
           ],
         ),
       ),
